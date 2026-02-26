@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hero Section</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Подключаем jQuery -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!--fonts-->
+  <link rel="stylesheet" href="https://use.typekit.net/hrq8sta.css">
+ 
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg header">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="./images/Logo-new.png" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto w-100 d-flex flex-column-reverse align-items-end flex-wrap">
+          <div class="main-nav d-flex">
+            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Why us?</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Reviews</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">ENG</a></li>
+          </div>
+          <div class="contact-header d-flex align-items-center flex-wrap">
+            <li class="nav-item nav-contact-item">
+              <a class="nav-link contact-link" href="mailto:info@zbces.com">info@zbces.com</a>
+            </li>
+            <li class="nav-item nav-contact-item">
+              <a class="nav-link contact-link-icon" href="tel:+34612222062"><i class="fa-solid fa-envelope"></i></a>
+            </li>
+            <li class="nav-item nav-contact-item">
+              <a class="nav-link contact-link" href="tel:+34612222062">+34 612 222 062</a>
+            </li>
+            <li class="nav-item nav-contact-item">
+              <a class="nav-link contact-link-icon" href="tel:+34612222062"><i class="fa-brands fa-whatsapp"></i></a>
+            </li>
+            <li class="nav-item nav-contact-item">
+              <a class="nav-link contact-link-icon" href="tel:+34612222062"><i class="fa-solid fa-paper-plane"></i></a>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <section class="hero position-relative">
+    <!-- Видео на фоне -->
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="./images/istockphoto-1399423451-640_adpp_is.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  
+    <!-- Затемнение, если нужно -->
+    <div class="overlay"></div>
+  
+    <div class="container position-relative">
+      <div class="row align-items-center">
+        <!-- Левая колонка с текстом -->
+        <div class="col-md-6 text-center text-md-start z-row">
+          <h1 class="display-4 fw-bold hero-title">Ventanas y puertas <br>de PVC Rehau</h1>
+          <p class="lead hero-subtitle">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet fermentum ipsum, non vestibulum libero.
+          </p>
+          <a href="#contact" class="btn btn-primary btn-lg mt-3 hero-btn">See products</a>
+        </div>
+  
+        <!-- Правая колонка с формой -->
+        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-center">
+          <div class="card-form p-4 shadow w-100" style="height: 55vh; display: flex; flex-direction: column; justify-content: center;">
+            <div class="formtitle">
+              <h3>Free consultation & price calculation</h3>
+            </div>
+            <form class="myh-70 d-flex flex-column justify-content-between">
+              <div class="row mb-3">
+                <div class="col">
+                  <input type="text" class="form-control form-control-lg" placeholder="Name" name="name" required>
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control form-control-lg" placeholder="Surname" name="surname" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control form-control-lg" placeholder="Email" name="email" required>
+              </div>
+              <div class="mb-3">
+                <input type="tel" class="form-control form-control-lg" placeholder="Phone Number" name="phone" required>
+              </div>
+              <button type="submit" class="form_btn btn btn-warning btn-lg w-100">Make An Appointment</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+<!-- Why Us section -->
+<section class="py-5"> 
+  <div class="container">
+    <h2 class="fw-bold display-5 section-title">Why us</h2>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="p-4 bg-white h-100">
+          <img src="./images/cards/quality.png" alt="High Quality" class="img-fluid mb-3">
+          <div class="card-feature card-white">
+            <h5 class=" text-primary card-title">High Quality</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique tortor leo, et semper turpis .Donec tristique tortor leo, et semper turpis </p>
+            <a href="#" class="consult-arrow fw-bold text-primary text-decoration-none">Consult me<i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="p-4 text-white h-100">
+          <img src="./images/cards/energy.png" alt="Energy Efficiency" class="img-fluid mb-3">
+          <div class="card-feature card-brown card-energy">
+            <div class="energy-overflow"></div>
+            <h5 class="card-title">Energy Efficiency</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique tortor leo, et semper turpis. Donec tristique tortor leo, et semper turpis.</p>
+            <a href="#" class="consult-arrow fw-bold text-white text-decoration-none">Consult me <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="p-4 bg-white h-100">
+          <img src="./images/cards/rehau.png" alt="Certified Rehau" class="img-fluid mb-3">
+          <div class="card-feature card-white">
+            <h5 class=" text-primary card-title">Certified Rehau</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique tortor leo, et semper turpis .Donec tristique tortor leo, et semper turpis .</p>
+            <a href="#" class="consult-arrow fw-bold text-primary text-decoration-none">Consult me <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-4">
+        <div class="p-4 bg-white h-100">
+          <img src="./images/cards/climate.png" alt="Certified Rehau" class="img-fluid mb-3">
+          <div class="card-feature card-blue card-climate">
+            <div class="climate-overflow"></div>
+            <h5 class="card-title">Climate</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique tortor leo, et semper turpis .Donec tristique tortor leo, et semper turpis </p>
+            <a href="#" class="consult-arrow fw-bold text-white text-decoration-none">Consult me <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-4">
+        <div class="p-4 bg-white h-100">
+          <img src="./images/cards/comfort.png" alt="Comfort" class="img-fluid mb-3">
+          <div class="card-feature card-white">
+            <h5 class=" text-primary card-title">Comfort</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique tortor leo, et semper turpis .Donec tristique tortor leo, et semper turpis </p>
+            <a href="#" class="consult-arrow fw-bold text-primary text-decoration-none">Consult me <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-4">
+        <div class="p-4 bg-white h-100">
+          <img src="./images/cards/salt.png" alt="Certified Rehau" class="img-fluid mb-3">
+          <div class="card-feature card-blue card-salt">
+            <div class="salt-overflow"></div>
+            <h5 class="card-title">Salt air protection</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique tortor leo, et semper turpis .Donec tristique tortor leo, et semper turpis </p>
+            <a href="#" class="consult-arrow fw-bold text-white text-decoration-none">Consult me <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+<!--Products-->
+<section class="py-5">
+  <div class="container d-flex flex-column gap-4">
+    <h2 class="fw-bold display-5 section-title">Our products</h2>
+
+    
+    <!-- Карточка 1 -->
+    <div class="row g-0 bg-light shadow rounded overflow-hidden first-card" style="max-height: 46vh;">
+      <div class="col-md-6 my-bg bg-opacity-75 text-white d-flex flex-column justify-content-between p-4 order-md-1 order-2">
+        <div class="d-flex flex-column justify-content-center h-100 product-fix">
+          <div class="header-card">
+            <h4 class="productcard-title">Comfort</h4>
+            <p class="mb-1 productcard-subtitle">EURO-DESIGN 70</p>
+          </div>
+          <ul class="list-unstyled">
+            <li><i class="fa-solid fa-check custom-check"></i> Практичный выбор для неотапливаемых помещений</li>
+            <li><i class="fa-solid fa-check custom-check"></i> Оптимальное соотношение цены и качества</li>
+            <li><i class="fa-solid fa-check custom-check"></i> Монтажная глубина – 60 мм / 3 камеры</li>
+          </ul>
+          <a href="#" class="btn btn-warning fw-bold mt-2 px-4 check-btn"><i class="fa-solid fa-check"></i>See More</a>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-2 order-1">
+        <img src="./images/products/comfort.png" alt="Comfort" class="img-fluid h-100 w-100 object-fit-cover">
+      </div>
+    </div>
+
+    <!-- Карточка 2 -->
+    <div class="row g-0 bg-light shadow rounded overflow-hidden second-card" style="max-height: 46vh;">
+      <div class="col-md-6">
+        <img src="./images/products/advanced.png" alt="Advanced" class="img-fluid h-100 w-100 object-fit-cover">
+      </div>
+      <div class="col-md-6 my-bg bg-opacity-75 text-white d-flex flex-column justify-content-between p-4">
+        <div class="d-flex flex-column justify-content-center h-100 product-fix">
+          <div class="header-card">
+            <h4 class="productcard-title">Advanced</h4>
+            <p class="mb-1 productcard-subtitle">SYNEGO</p>
+          </div>
+          <ul class="list-unstyled">
+            <li><i class="fa-solid fa-check custom-check"></i> Практичный выбор для неотапливаемых помещений</li>
+            <li><i class="fa-solid fa-check custom-check"></i> Оптимальное соотношение цены и качества</li>
+            <li><i class="fa-solid fa-check custom-check"></i> Монтажная глубина – 60 мм / 3 камеры</li>
+          </ul>
+          <a href="#" class="btn btn-warning fw-bold mt-2 px-4 check-btn"><i class="fa-solid fa-check"></i>See More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Карточка 3 -->
+    <div class="row g-0 bg-light shadow rounded overflow-hidden third-card" style="max-height: 46vh;">
+      <div class="col-md-6 my-bg bg-opacity-75 text-white d-flex flex-column justify-content-between p-4 order-md-1 order-2">
+        <div class="d-flex flex-column justify-content-center h-100 product-fix">
+          <div class="header-card">
+            <h4 class="productcard-title">Premium</h4>
+            <p class="mb-1 productcard-subtitle">GENEO RAU-FIPRO X</p>
+          </div>
+          <ul class="list-unstyled">
+            <li><i class="fa-solid fa-check custom-check"></i> Максимальная энергоэффективность и шумоизоляция</li>
+            <li><i class="fa-solid fa-check custom-check"></i> Армирование из фиброволокна без стали</li>
+            <li><i class="fa-solid fa-check custom-check"></i> Монтажная глубина – 86 мм / 6 камер</li>
+          </ul>
+          <a href="#" class="btn btn-warning fw-bold mt-2 px-4 check-btn"><i class="fa-solid fa-check"></i>See More</a>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-2 order-1">
+        <img src="./images/products/premium.png" alt="Premium" class="img-fluid h-100 w-100 object-fit-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Promotion-->
+<section class="promotion-section text-white py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Левая колонка с изображением -->
+      <div class="col-md-6 text-center mb-4 mb-md-0">
+        <!-- <video src="./images/mosquite.webm" autoplay muted loop></video> -->
+         <img src="./images/free.png" alt="" class="free fa-beat">
+         <img class="mosquite-img" src="./images/mosquite-opacity.png" alt="promotion ZBC">
+      </div>
+
+      <!-- Правая колонка с текстом -->
+      <div class="col-md-6 promotion_content">
+        <h2 class="fw-bold display-5 section-title promotion_title">Promotion</h2>
+        <p class="fs-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec consectetur erat</p>
+        <a href="#" class="btn btn-warning fw-bold mt-2 px-4 check-btn big-check"><i class="fa-solid fa-check"></i>Consult me</a>
+        <div class="countdown-container">
+          <h1 style="text-align: left;">Promotion ends in:</h1>
+          <div class="countdown">
+            <div><span id="days">0</span><p>дней</p></div>
+            <div><span id="hours">0</span><p>часов</p></div>
+            <div><span id="minutes">0</span><p>минут</p></div>
+            <div><span id="seconds">0</span><p>секунд</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Montage-->
+
+<section class="py-5">
+  <div class="container">
+    <h2 class="fw-bold display-5 section-title">Installation</h2>
+
+    <!-- Блок 1 -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6 text-center text-md-start">
+        <img src="./images/montage/montage-w.png" alt="Installation of windows and doors" class="img-fluid border border-2" style="border-color: #002c60;">
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0 install_content">
+        <h4 class="fw-bold install_title" style="color: #002c60;">Installation of<br>windows and doors</h4>
+        <p class="install_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec neque eget quam malesuada posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec neque eget quam malesuada posuere. </p>
+        <button class="btn d-inline-flex align-items-center px-4 py-2" style="background-color: #f7d900; color: #002c60; border: 2px solid #002c60; font-weight: bold;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2" viewBox="0 0 16 16">
+            <path d="M13.485 1.757a.75.75 0 0 1 1.06 1.06L5.06 12.303a.75.75 0 0 1-1.06 0L1.454 9.757a.75.75 0 0 1 1.06-1.06L4.5 10.682 13.485 1.757z"/>
+          </svg>
+          Consult me
+        </button>
+      </div>
+    </div>
+    <div class="separator">
+    </div>
+    <!-- Блок 2 -->
+    <div class="row align-items-center border-top pt-5" style="border-color: #002c60;">
+      <div class="col-md-6 order-md-2 text-center text-md-end">
+        <img src="./images/montage/montage-m.png" alt="Furniture installation" class="img-fluid border border-2" style="border-color: #002c60;">
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0 order-md-1 install_content">
+        <h4 class="fw-bold install_title" style="color: #002c60;">Furniture<br>installation</h4>
+        <p class="install_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec neque eget quam malesuada posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec neque eget quam malesuada posuere. </p>
+        <button class="btn d-inline-flex align-items-center px-4 py-2" style="background-color: #f7d900; color: #002c60; border: 2px solid #002c60; font-weight: bold;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2" viewBox="0 0 16 16">
+            <path d="M13.485 1.757a.75.75 0 0 1 1.06 1.06L5.06 12.303a.75.75 0 0 1-1.06 0L1.454 9.757a.75.75 0 0 1 1.06-1.06L4.5 10.682 13.485 1.757z"/>
+          </svg>
+          Consult me
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Marquee-->
+
+<section>
+
+  <h2 class="fw-bold display-5 section-title">Promotion</h2>
+
+  <div class="marquee">
+    <div class="overflow"></div>
+
+    <ul class="marquee-content">
+      <li><i class="fab fa-github"></i></li>
+      <li><i class="fab fa-codepen"></i></li>
+      <li><i class="fab fa-free-code-camp"></i></li>
+      <li><i class="fab fa-dev"></i></li>
+      <li><i class="fab fa-react"></i></li>
+      <li><i class="fab fa-vuejs"></i></li>
+      <li><i class="fab fa-angular"></i></li>
+      <li><i class="fab fa-node"></i></li>
+      <li><i class="fab fa-wordpress"></i></li>
+      <li><i class="fab fa-aws"></i></li>
+      <li><i class="fab fa-docker"></i></li>
+      <li><i class="fab fa-android"></i></li>
+    </ul>
+  </div>
+</section>
+
+<!--Certification-->
+<section id="certification-section">
+  <div class="container">
+    <h2 class="fw-bold display-5 section-title">Our certificates</h2>
+
+    <div class="row">
+      <div class="col-md-4 cert"><img src="./images/cert/45001.png" alt=""></div>
+      <div class="col-md-4 cert"><img src="./images/cert/9001.png" alt=""></div>
+      <div class="col-md-4 cert"><img src="./images/cert/14001.png" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!--Carousel-->
+
+<section id="opinion">
+  <div class="overflow "></div>
+<div class="cascade-slider_container" id="cascade-slider">
+  <div class="cascade-slider_slides">
+    <div class="cascade-slider_item">
+     <div class='card align'>
+  <div class='photo'>
+    <img src="./images/opinion/o1.png">
+  </div>
+
+</div>
+    </div>
+    <div class="cascade-slider_item">
+     <div class='card align'>
+  <div class='photo'>
+    <img src="./images/opinion/o1.png">
+  </div>
+
+</div>
+    </div>
+    <div class="cascade-slider_item">
+     <div class='card align'>
+  <div class='photo'>
+    <img src="./images/opinion/o1.png">
+  </div>
+
+</div>
+    </div>
+    <div class="cascade-slider_item">
+     <div class='card align'>
+  <div class='photo'>
+    <img src="./images/opinion/o1.png">
+  </div>
+
+</div>
+    </div>
+    <div class="cascade-slider_item">
+     <div class='card align'>
+  <div class='photo'>
+    <img src="./images/opinion/o1.png">
+  </div>
+
+</div>
+    </div>
+    <div class="cascade-slider_item">
+     <div class='card align'>
+  <div class='photo'>
+    <img src="./images/opinion/o1.png">
+  </div>
+
+</div>
+    </div>
+    <div class="cascade-slider_item">
+     <div class='card align'>
+  <div class='photo'>
+    <img src="./images/opinion/o1.png">
+  </div>
+
+</div>
+    </div>
+    <div class="cascade-slider_item">
+     <div class='card align'>
+  <div class='photo'>
+    <img src="./images/opinion/o1.png">
+  </div>
+
+</div>
+    </div>
+  </div>
+
+  <ol class="cascade-slider_nav">
+    <li class="cascade-slider_dot cur"></li>
+    <li class="cascade-slider_dot"></li>
+    <li class="cascade-slider_dot"></li>
+    <li class="cascade-slider_dot"></li>
+    <li class="cascade-slider_dot"></li>
+    <li class="cascade-slider_dot"></li>
+    <li class="cascade-slider_dot"></li>
+    <li class="cascade-slider_dot"></li>
+  </ol>
+
+  <span class="cascade-slider_arrow cascade-slider_arrow-left" data-action="prev"><img src="https://agenciafagulha.com.br/wp-content/uploads/2019/12/chvron-left.svg" type="image/svg+xml"></span>
+  <span class="cascade-slider_arrow cascade-slider_arrow-right" data-action="next"><img src="https://agenciafagulha.com.br/wp-content/uploads/2019/12/chvron-right.svg" type="image/svg+xml"></span>
+</div>
+</section>
+<!-- <div id="carousel" data-auto="true">
+  <div id="scene">
+    <img class="carousel_item" src="https://user-images.githubusercontent.com/26748614/112764571-70698100-9009-11eb-90b0-b42c3dd1d7d3.jpg" alt="">
+    <img class="carousel_item" src="https://user-images.githubusercontent.com/26748614/112764570-6fd0ea80-9009-11eb-9466-2b2063b82ddb.jpg" alt="">
+    <img class="carousel_item" src="https://user-images.githubusercontent.com/26748614/112764569-6f385400-9009-11eb-9066-ef6c086b7587.jpg" alt="">
+    <img class="carousel_item" src="htstps://user-images.githubusercontent.com/26748614/112764568-6e9fbd80-9009-11eb-9efe-f52b73ec056c.jpg" alt="">
+    <img class="carousel_item" src="https://user-images.githubusercontent.com/26748614/112764566-6e072700-9009-11eb-9169-d5c82f3edffa.jpg" alt="">
+    <img class="carousel_item" src="https://user-images.githubusercontent.com/26748614/112764565-6d6e9080-9009-11eb-8212-14b983fed967.jpg" alt="">
+    <img class="carousel_item" src="https://user-images.githubusercontent.com/26748614/112764563-6cd5fa00-9009-11eb-99a2-1a8d7492d824.jpg" alt="">
+    <img class="carousel_item" src="https://user-images.githubusercontent.com/26748614/112764562-6ba4cd00-9009-11eb-91fc-18dd1ce8c8a4.jpg" alt="">
+    <img class="carousel_item" src="https://user-images.githubusercontent.com/26748614/112764579-72cbdb00-9009-11eb-8d76-029b1efef4cc.jpg" alt="">
+    <img class="carousel_item" src="https://user-images.githubusercontent.com/26748614/112764577-72334480-9009-11eb-940d-a10aaaab2b64.jpg" alt="">
+     <img class="carousel_item" src="./images/opinion/o1.png" alt="">
+    <img class="carousel_item" src="./images/opinion/o2.png" alt="">
+    <img class="carousel_item" src="./images/opinion/o3.png" alt="">
+    <img class="carousel_item" src="./images/opinion/o1.png" alt="">
+    <img class="carousel_item" src="./images/opinion/o2.png" alt="">
+    <img class="carousel_item" src="./images/opinion/o3.png" alt="">
+    <img class="carousel_item" src="./images/opinion/o1.png" alt="">
+    <img class="carousel_item" src="./images/opinion/o1.png" alt="">
+    <img class="carousel_item" src="./images/opinion/o1.png" alt="">
+    <img class="carousel_item" src="./images/opinion/o1.png" alt=""> 
+  </div>
+
+  <div id="carousel_btn">
+    <div class="btn prev">Prev</div>
+    <div class="btn next">Next</div>
+  </div>
+</div> -->
+ <!-- Contact form -->
+ <section id="contact">
+  <div class="container">
+    <h2 class="fw-bold display-5 section-title">Contact</h2>
+
+    <div class="mob-block" data-aos="fade-left" data-aos-duration="2000">
+    </div>
+    <div class="row myrow">
+      <div class="col-md-6 col-12 form_info">
+        <div class="c_container">
+          <div class="c_title">
+          </div>
+          <div class="c_mail" data-aos="zoom-in" data-aos-duration="2000" >
+            <a class='text-decoration-none' href="mailto:info@income-service.com" target="_blank">
+              <span>
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+              info@income-service.com
+            </a>
+          </div>
+          <div class="c_mail" data-aos="zoom-in" data-aos-duration="2000" >
+            <a class='text-decoration-none' href="mailto:info@income-service.com" target="_blank">
+              <span>
+                <i class="fa-solid fa-phone"></i>
+                            </span>
+              info@income-service.com
+            </a>
+          </div>
+          <div class="c_mail" data-aos="zoom-in" data-aos-duration="2000" >
+            <a class='text-decoration-none' href="mailto:info@income-service.com" target="_blank">
+              <span>
+                <i class="fa-solid fa-location-dot"></i>
+              </span>
+              info@income-service.com
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-12 form_inputs">
+        <form action="" id="cform" method="post" autocomplete="off" onsubmit='return false'>
+          <div class='p-0 m-0' data-aos="zoom-in-up" data-aos-duration="2000"  data-aos-delay="400">
+            <input type="text" required="true" name="name" id="c_name" placeholder="Ім'я">
+          </div>
+          <div data-aos="zoom-in-up" data-aos-duration="2000"  data-aos-delay="800">
+            <input type="email" required="true" name="email" id="c_email" placeholder="Електронна пошта">
+          </div>
+          <div data-aos="zoom-in-up" data-aos-duration="2000"  data-aos-delay="1200">
+            <input type="text" name="text" id="c_text" placeholder="Повідомлення">
+          </div>
+          <div class="submit_container" data-aos="zoom-in" data-aos-duration="2000"  data-aos-delay="2000">
+            <input type="submit" value="Надіслати повідомлення" id="submit">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="mob-block"></div>
+    <div class="mob-block"></div>
+  </div>
+</section>
+
+<!-- Contact form -->
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./js/script.js"></script>
+
+</body>
+</html>

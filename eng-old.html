@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZBC Ventanas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" type="image/x-icon" href="./images/favicon/favicon.ico">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Подключаем jQuery -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet">
+    <link href="./css/mobile.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!--fonts-->
+  <link rel="stylesheet" href="https://use.typekit.net/hrq8sta.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+  <!-- POPINS -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+            <div class="col-md-12  mt-md-0 d-flex align-items-center"  data-aos="fade-left" data-aos-duration="2000">
+          <div class=" modal-card-form p-4 shadow w-100" style="height: 512px;width:512px; display: flex; flex-direction: column; justify-content: center;">
+            <div class="formtitle">
+              <h3 class="modal-title text-white">Free consultation & price calculation</h3>
+            </div>
+            <form class="myh-70 d-flex flex-column justify-content-between">
+              <div class="row mb-3">
+                <div class="col">
+                  <input type="text" class="form-control form-control-lg" placeholder="Name" name="name" required>
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control form-control-lg" placeholder="Surname" name="surname" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control form-control-lg" placeholder="Email" name="email" required>
+              </div>
+              <div class="mb-3">
+                <input type="tel" class="form-control form-control-lg" placeholder="Phone Number" name="phone" required>
+              </div>
+              <button type="submit" class="form_btn btn btn-yellow btn-lg w-100 txt-blue">Make An Appointment</button>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg header">
+  <div class="container">
+    <a class="navbar-brand" href="/#home"><img src="./images/Logo-new.png" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto w-100 d-flex flex-column-reverse align-items-end flex-wrap">
+        <div class="main-nav d-flex nav-width justify-content-end" style="position: relative;top:9px;">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#why-us">Why us</a></li>
+
+          <!-- Products Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#products" id="productsDropdown" role="button" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                <li><a class="dropdown-item" href="./products/eng/comfort.html">Comfort</a></li>
+
+                <li><a class="dropdown-item" href="./products/eng/comfort-plus.html">Comfort+</a></li>
+              <li><a class="dropdown-item" href="./products/eng/advanced.html">Advanced</a></li>
+              <li><a class="dropdown-item" href="./products/eng/advanced-plus.html">Advanced+</a></li>
+
+            </ul>
+          </li>
+
+          <!-- Installation Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#install" id="installationDropdown" role="button" aria-expanded="false">
+              Installation
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="installationDropdown">
+              <li><a class="dropdown-item" href="#">Windows</a></li>
+              <li><a class="dropdown-item" href="#">Furniture</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+          <!-- Language Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" id="languageDropdown" role="button" aria-expanded="false">
+              ENG
+            </a>
+            <ul class="dropdown-menu lang-menu" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item" href="/">ESP</a></li>
+              <li><a class="dropdown-item" href="/cat">CAT</a></li>
+              <li><a class="dropdown-item" href="/ru">RUS</a></li>
+            </ul>
+          </li>
+
+        </div>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  <section class="hero position-relative" id="home">
+    <div class="overlay"></div>
+    <!-- Видео на фоне -->
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="./images/footage.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  
+    <!-- Затемнение, если нужно -->
+  
+    <div class="container position-relative">
+      <div class="row align-items-center">
+        <!-- Левая колонка с текстом -->
+        <div class="col-md-6 text-center text-md-start z-row hero-text-col">
+          <h1 class="display-4 fw-bold hero-title" data-aos="fade-right" data-aos-duration="1500">ZBC – uPVC Windows & Doors with Rehau profiles</h1>
+          <p class="lead hero-subtitle" data-aos="fade-right" data-aos-duration="1500"      data-aos-delay="300">
+            Your Home. Your Comfort. Our Windows.<br>
+Energy efficiency and modern design. <br>Chosen for comfort. Built to last.
+
+          </p>
+          <a href="#contact" class="btn btn-primary btn-lg mt-3 hero-btn" data-aos="fade-right" data-aos-duration="1500"      data-aos-delay="500"
+          data-bs-toggle="modal" data-bs-target="#exampleModal">Consult me</a>
+     
+        </div>
+  
+        <!-- Правая колонка с формой -->
+        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-center"  data-aos="fade-left" data-aos-duration="2000">
+          <div class="card-form p-4 shadow w-100" style=" display: flex; flex-direction: column; justify-content: center;">
+            <div class="formtitle">
+              <h3>Free consultation & price calculation</h3>
+            </div>
+            <form class="myh-70 d-flex flex-column justify-content-between">
+              <div class="row mb-3">
+                <div class="col">
+                  <input type="text" class="form-control form-control-lg" placeholder="Name" name="name" required>
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control form-control-lg" placeholder="Surname" name="surname" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control form-control-lg" placeholder="Email" name="email" required>
+              </div>
+              <div class="mb-3">
+                <input type="tel" class="form-control form-control-lg" placeholder="Phone Number" name="phone" required>
+              </div>
+              <button type="submit" class="form_btn btn btn-yellow btn-lg w-100 txt-blue">Make An Appointment</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+<!-- Why Us section -->
+<section class="py-5" id="why-us"> 
+    <div class="plashka-yellow" data-aos="fade-right" data-aos-duration="500">
+    <div class="container">
+    
+    </div>
+  </div>
+      <div class="container">
+         <h2 class=" display-5 section-title why-title why-plashka-title p-yellow-text" data-aos="fade-right" data-aos-duration="500" data-aos-delay="200">
+        Why us
+      </h2>
+
+
+  </div>
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Card 1 - Full Service -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="p-4 bg-white h-100">
+          <img src="./images/cards/quality.png" alt="Full Service" class="img-fluid mb-3">
+          <div class="card-feature card-white">
+            <h5 class="text-primary card-title">Full service</h5>
+            <p> From measurement to installation – we take care of everything so you can enjoy your new windows and doors without worries</p>
+            <a href="#" class="consult-arrow fw-bold text-primary text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <span>Consult me </span>
+              <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                <circle cx="12" cy="12" r="11" fill="none" stroke="#012456" stroke-width="2"/>
+                <path d="M10 8l4 4-4 4" fill="none" stroke="#012456" stroke-width="2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 - Price & Quality -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+        <div class="p-4 text-white h-100">
+          <img src="./images/cards/energy.png" alt="Price & Quality" class="img-fluid mb-3">
+          <div class="card-feature card-brown card-energy">
+            <div class="energy-overflow"></div>
+            <h5 class="card-title">Energy saving</h5>
+            <p>   Lower energy bills, higher comfort. Our windows insulate your home and reduce energy consumption.</p>
+            <a href="#" class="consult-arrow fw-bold text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <span>Consult me </span>
+              <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                <circle cx="12" cy="12" r="11" fill="none" stroke="#fff" stroke-width="2"/>
+                <path d="M10 8l4 4-4 4" fill="none" stroke="#fff" stroke-width="2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 - Energy Saving -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+        <div class="p-4 bg-white h-100">
+          <img src="./images/cards/rehau.png" alt="Energy Saving" class="img-fluid mb-3">
+          <div class="card-feature card-white">
+            <h5 class="text-primary card-title">Price & Quality</h5>
+            <p>We offer top-quality PVC windows and doors at a reasonable price. A smart investment in comfort and durability!</p>
+            <a href="#" class="consult-arrow fw-bold text-primary text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <span>Consult me </span>
+              <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                <circle cx="12" cy="12" r="11" fill="none" stroke="#012456" stroke-width="2"/>
+                <path d="M10 8l4 4-4 4" fill="none" stroke="#012456" stroke-width="2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 - Climate Control -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
+        <div class="p-4 bg-white h-100">
+          <img src="./images/cards/climate.png" alt="Climate Control" class="img-fluid mb-3">
+          <div class="card-feature card-blue card-climate">
+            <div class="climate-overflow"></div>
+            <h5 class="card-title">Climate control</h5>
+            <p>Windows and doors that protect from cold, heat, and noise, creating a comfortable and pleasant atmosphere all year round.</p>
+            <a href="#" class="consult-arrow fw-bold text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <span>Consult me </span>
+              <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                <circle cx="12" cy="12" r="11" fill="none" stroke="#fff" stroke-width="2"/>
+                <path d="M10 8l4 4-4 4" fill="none" stroke="#fff" stroke-width="2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 - Soundproofing -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="800">
+        <div class="p-4 bg-white h-100">
+          <img src="./images/cards/comfort.png" alt="Soundproofing" class="img-fluid mb-3">
+          <div class="card-feature card-white">
+            <h5 class="text-primary card-title">Sound insulation
+</h5>
+            <p> Enjoy peace and quiet. Our windows reduce outside noise for maximum indoor comfort.</p>
+            <a href="#" class="consult-arrow fw-bold text-primary text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <span>Consult me </span>
+              <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                <circle cx="12" cy="12" r="11" fill="none" stroke="#012456" stroke-width="2"/>
+                <path d="M10 8l4 4-4 4" fill="none" stroke="#012456" stroke-width="2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 - Marine Protection -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+        <div class="p-4 bg-white h-100">
+          <img src="./images/cards/salt.png" alt="Marine Protection" class="img-fluid mb-3">
+          <div class="card-feature card-blue card-salt">
+            <div class="salt-overflow"></div>
+            <h5 class="card-title">Marine air</h5>
+            <p> Our materials resist corrosion caused by sea air – ideal for coastal areas.</p>
+            <a href="#" class="consult-arrow fw-bold text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <span>Consult me </span>
+              <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                <circle cx="12" cy="12" r="11" fill="none" stroke="#fff" stroke-width="2"/>
+                <path d="M10 8l4 4-4 4" fill="none" stroke="#fff" stroke-width="2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  
+<!--Products-->
+<section class="py-5 position-relative" id="products">
+    <div class="plashka-blue" data-aos="fade-left" data-aos-duration="500">
+    <div class="container">
+     
+    </div>
+  </div>
+  <div class="container d-flex flex-column gap-4 ">
+ <h2 class=" display-5 section-title why-title text-blue p-blue-text" data-aos="fade-left" data-aos-duration="500" data-aos-delay="200">
+        Our Products
+      </h2>
+    <!-- Card 1 -->
+    <div class="row g-0 bg-light shadow rounded overflow-hidden first-card card-height" data-aos="fade-up" data-aos-duration="1000">
+      <div class="col-md-6 my-bg bg-opacity-75 text-white d-flex flex-column justify-content-between p-4 order-md-1 order-2">
+        <div class="d-flex flex-column justify-content-center h-100 product-fix">
+          <div class="header-card">
+            <h4 class="productcard-title">Comfort</h4>
+            <p class="mb-1 productcard-subtitle">EURO-DESIGN 70</p>
+          </div>
+          <ul class="list-unstyled">
+            <li><i class="fa-solid fa-check custom-check"></i> Proven reliability for standard glazing needs
+</li>
+            <li><i class="fa-solid fa-check custom-check"></i> Optimal balance between price and quality</li>
+            <li><i class="fa-solid fa-check custom-check"></i> Basic thermal and acoustic protection</li>
+          </ul>
+          <a href="./products/eng/comfort.html" class="btn btn-warning  mt-2 px-4 check-btn">See more</a>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-2 order-1">
+        <img src="./images/products/comfort.png" alt="Comfort" class="img-fluid h-100 w-100 object-fit-cover">
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="row g-0 bg-light shadow rounded overflow-hidden second-card card-height" data-aos="fade-up" data-aos-duration="1000">
+      <div class="col-md-6">
+        <img src="./images/products/comfort.png" alt="Advanced" class="img-fluid h-100 w-100 object-fit-cover">
+      </div>
+      <div class="col-md-6 my-bg bg-opacity-75 text-white d-flex flex-column justify-content-between p-4">
+        <div class="d-flex flex-column justify-content-center h-100 product-fix">
+          <div class="header-card">
+            <h4 class="productcard-title">Comfort+</h4>
+            <p class="mb-1 productcard-subtitle" style="text-transform:uppercase">Slinova</p>
+          </div>
+          <ul class="list-unstyled">
+            <li><i class="fa-solid fa-check custom-check"></i> Enhanced comfort for everyday living</li>
+            <li><i class="fa-solid fa-check custom-check"></i> Improved thermal and sound insulation</li>
+            <li><i class="fa-solid fa-check custom-check"></i> Designed to fit modern living spaces</li>
+          </ul>
+          <a href="./products/eng/comfort-plus.html" class="btn btn-warning  mt-2 px-4 check-btn">See more</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="row g-0 bg-light shadow rounded overflow-hidden third-card card-height" data-aos="fade-up" data-aos-duration="1000">
+      <div class="col-md-6 my-bg bg-opacity-75 text-white d-flex flex-column justify-content-between p-4 order-md-1 order-2">
+        <div class="d-flex flex-column justify-content-center h-100 product-fix">
+          <div class="header-card">
+            <h4 class="productcard-title">Advanced</h4>
+            <p class="mb-1 productcard-subtitle" style="text-transform:uppercase">Synego</p>
+          </div>
+          <ul class="list-unstyled">
+            <li><i class="fa-solid fa-check custom-check"></i> Balance of style, efficiency, and practicality</li>
+            <li><i class="fa-solid fa-check custom-check"></i> Energy efficiency tailored for residential spaces</li>
+            <li><i class="fa-solid fa-check custom-check"></i> Superior noise reduction for urban environments
+</li>
+          </ul>
+          <a href="./products/eng/advanced.html" class="btn btn-warning  mt-2 px-4 check-btn">See more</a>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-2 order-1">
+        <img src="./images/products/advanced.png" alt="Premium" class="img-fluid h-100 w-100 object-fit-cover">
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="row g-0 bg-light shadow rounded overflow-hidden fourth-card card-height" data-aos="fade-up" data-aos-duration="1000">
+      <div class="col-md-6">
+        <img src="./images/products/premium.png" alt="Advanced" class="img-fluid h-100 w-100 object-fit-cover">
+      </div>
+      <div class="col-md-6 my-bg bg-opacity-75 text-white d-flex flex-column justify-content-between p-4">
+        <div class="d-flex flex-column justify-content-center h-100 product-fix">
+          <div class="header-card">
+            <h4 class="productcard-title">Advanced +</h4>
+            <p class="mb-1 productcard-subtitle">GENEO</p>
+          </div>
+          <ul class="list-unstyled">
+            <li><i class="fa-solid fa-check custom-check"></i> Ultimate in technology and comfort</li>
+            <li><i class="fa-solid fa-check custom-check"></i> Exceptional thermal insulation and soundproofing</li>
+            <li><i class="fa-solid fa-check custom-check"></i> Superior quality for those who demand the best</li>
+          </ul>
+          <a href="./products/eng/advanced-plus.html" class="btn btn-warning  mt-2 px-4 check-btn">See more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--Promotion-->
+<section class="promotion-section text-white py-5" id="promotion">
+  <div class="container">
+    <div class="row d-flex align-items-stretch promotion-flex">
+      <!-- Левая колонка с изображением -->
+      <div class="col-md-6 text-center mb-4 mb-md-0" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400">
+        <!-- <video src="./images/mosquite.webm" autoplay muted loop></video> -->
+        <img src="./images/free.png" alt="" class="free fa-beat">
+        <img class="mosquite-img" src="./images/mosquite-opacity.png" alt="promotion ZBC">
+      </div>
+
+      <!-- Правая колонка с текстом -->
+      <div class="col-md-6 d-flex justify-content-start align-items-start" style="position: relative; left: -0.8vw;">
+        <div class="promotion_content p-3 text-start" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="400">
+
+          <h2 class="fw-bold display-5 section-title promotion_title">Special June Offer</h2>
+          <p class="fs-5 promotion-sub">Order your windows this month and get a mosquito screen for free!</p>
+          <a href="#" class="btn btn-warning fw-bold mt-2 px-4 check-btn big-check hober_btn">Consult me</a>
+
+          <div class="countdown-container mt-4">
+            <h1 style="text-align: left;">Promotion ends in:</h1>
+            <div class="countdown d-flex gap-3">
+              <div><span id="days">0</span><p>days</p></div>
+              <div><span id="hours">0</span><p>hours</p></div>
+              <div class="mob_mins"><span id="minutes">0</span><p>minutes</p></div>
+              <div class="mob_seconds"><span id="seconds">0</span><p>seconds</p></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Montage-->
+
+<section class="py-5" id="install">
+    <div class="plashka-yellow" data-aos="fade-right" data-aos-duration="500" style="margin-top: 50px;">
+     
+  </div>
+  <div class="container">
+ <h2 class=" display-5 section-title p-yellow-text" data-aos="fade-right" data-aos-duration="500" data-aos-delay="200">
+        Installation
+      </h2>
+    <!-- Блок 1 -->
+    <div class="row align-items-start mb-5 mt-5">
+      <div class="col-md-6 text-center text-md-start" style="position: relative;top: 8px;" data-aos="fade-right" data-aos-duration="2000" >
+        <img src="./images/montage/montage-w-square.png" alt="Installation of windows and doors" class="img-fluid img_border" style="border-color: #002c60;">
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0 install_content" data-aos="fade-left" data-aos-duration="2000" >
+        <h4 class="fw-bold install_title" style="color: #002c60;">Installation of<br>windows and doors</h4>
+        <p class="install_text">Our trained specialists ensure precise installation of PVC windows and doors, providing excellent thermal and sound insulation, enhanced energy efficiency, and long-lasting reliability to improve the comfort of your home. </p>
+        <button class="btn d-inline-flex align-items-center px-4 py-2 install_btn" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+          Consult me
+        </button>
+      </div>
+    </div>
+    
+    <!-- <div class="separator">
+    </div> -->
+
+    <!-- Блок 2 -->
+    <div class="row align-items-start  pt-5">
+      <div class="col-md-6 order-md-2 text-center text-md-start" style="position: relative;top: 8px;" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="400">
+        <img src="./images/montage/montage-m-square.png" alt="Furniture installation" class="img-fluid img_border" style="border-color: #002c60;">
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0 order-md-1 install_content" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400">
+        <h4 class="fw-bold install_title" style="color: #002c60;">Furniture<br>installation</h4>
+        <p class="install_text">Our experienced team provides professional furniture installation, ensuring accurate assembly, stability, and a flawless finish — enhancing both the functionality and aesthetic appeal of your home or workspace with every detail.</p>
+        <button class="btn d-inline-flex align-items-center px-4 py-2 install_btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Consult me
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Marquee-->
+  <div class="plashka-blue" data-aos="fade-right" data-aos-duration="500" style="margin-top: 50px; right: -10px !important;">
+     
+  </div>
+  <div class="container">
+ <h2 class=" display-5 section-title p-blue-text" data-aos="fade-right" style="padding-top: 6.56vh !important;" data-aos-duration="500" data-aos-delay="200">
+        Our partners
+      </h2>
+  </div>
+<section  id="partners">
+
+  <div class="marquee">
+   
+    <div class="overflow"></div>
+
+    <ul class="marquee-content">
+      <!-- Roto -->
+      
+        <li><img src="./images/partners/roto.png" alt="Roto"></li>
+       <li><img src="./images/partners/gu.png" alt="Roto"></li>
+      <li><img src="./images/partners/maco.png" alt="Roto"></li>
+      <li><img src="./images/partners/wink.png" alt="Roto"></li>
+      <li><img src="./images/partners/hoppe.png" alt="Roto"></li>
+
+      <li><img src="./images/partners/siegenia.png" alt="Roto"></li>
+            
+
+    </ul>
+  </div>
+</section>
+
+
+
+
+<!-- Swiper slider -->
+<section id="swiper-slider-me " >
+  <div class="plashka-yellow" data-aos="fade-right" data-aos-duration="500" style="margin-top: 50px;">
+     
+  </div>
+  <div class="container"> <h2 class=" display-5 section-title why-title text-blue p-blue-text" data-aos="fade-left" data-aos-duration="500" data-aos-delay="200">
+        Our Products
+      </h2></div>
+
+    <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="./images/portfolio/1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./images/portfolio/2.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./images/portfolio/3.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./images/portfolio/4.png" alt=""></div>
+      <div class="swiper-slide"><img src="./images/portfolio/5.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./images/portfolio/6.png" alt=""></div>
+      <div class="swiper-slide"><img src="./images/portfolio/3.jpg" alt=""></div>
+
+      
+     
+
+    </div>
+        <!-- Стрелочки навигации -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+ <section id="contact">
+
+  <div class="container">
+    <h2 class="fw-bold display-5 section-title contact-title" data-aos="fade-up" data-aos-duration="1000">Contact</h2>
+
+    <div class="mob-block" data-aos="fade-left" data-aos-duration="1000">
+    </div>
+    <div class="row myrow">
+      <div class="col-md-6 col-12 form_info">
+        <div class="c_container">
+          <div class="c_title">
+          </div>
+          <div class="c_mail" data-aos="fade-right" data-aos-duration="1000" >
+            <a class='text-decoration-none' href="mailto:info@income-service.com" target="_blank">
+              <span>
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+              info@zbces.com
+            </a>
+          </div>
+          <div class="c_mail" data-aos="fade-right" data-aos-duration="1000"  >
+            <a class='text-decoration-none' href="mailto:info@income-service.com" target="_blank">
+              <span>
+                <i class="fa-solid fa-phone"></i>
+                            </span>
+              +34 624 293 977
+            </a>
+          </div>
+          <div class="c_mail" data-aos="fade-right" data-aos-duration="1000" >
+            <a class='text-decoration-none' href="mailto:info@income-service.com" target="_blank">
+              <span>
+                <i class="fa-solid fa-location-dot"></i>
+              </span>
+              Carrer Saragossa, 1-3, local 33, <br>     <span style="margin-left: 24px;">08860, Castelldefels, Barcelona</span>
+            </a>
+          </div>
+                      <div class="social-contact"  data-aos="zoom-in" data-aos-duration="1000"  data-aos-delay="1200">
+          <ul>
+            <li class="soc-item"><i class="fa-brands fa-facebook-f"></i></li>
+            <li class="soc-item"><i class="fa-brands fa-instagram"></i></li>
+            <li class="soc-item"><i class="fa-brands fa-whatsapp"></i></li>
+             <li class="soc-item"><i class="fa-brands fa-telegram"></i></li>
+                          <li class="soc-item"><i class="fa-brands fa-youtube"></i></li>
+
+          </ul>
+        </div>
+        </div>
+     
+      </div>
+
+      <div class="col-md-6 col-12 form_inputs" data-aos="zoom-in" data-aos-duration="1000"  >
+        <!-- <form action="" id="cform" method="post" autocomplete="off" onsubmit='return false'>
+          <div class='p-0 m-0' >
+            <input type="text" required="true" name="name" id="c_name" placeholder="Name">
+          </div>
+          <div >
+            <input type="email" required="true" name="email" id="c_email" placeholder="Number">
+          </div>
+          <div >
+            <input type="text" required="true" name="email" id="c_email" placeholder="Message">
+          </div>
+          <div class="submit_container" >
+            <input type="submit" value="Send message" id="submit">
+          </div>
+        </form> -->
+          <div class="card-form card-form_contact p-4 shadow w-100" style="height: 55vh; display: flex; flex-direction: column; justify-content: center;">
+              <div class="overlay-contact"></div>
+            <div class="formtitle">
+              <h3 class="text-white">Free consultation & price calculation</h3>
+            </div>
+            <form class="myh-70 d-flex flex-column justify-content-between">
+              <div class="row mb-3">
+                <div class="col">
+                  <input type="text" class="form-control form-control-lg" placeholder="Name" name="name" required>
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control form-control-lg" placeholder="Surname" name="surname" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control form-control-lg" placeholder="Email" name="email" required>
+              </div>
+              <div class="mb-3">
+                <input type="tel" class="form-control form-control-lg" placeholder="Phone Number" name="phone" required>
+              </div>
+              <button type="submit" class="form_btn btn btn-yellow btn-lg w-100 txt-blue">Make an appointment</button>
+            </form>
+          </div>
+ 
+      </div>
+    </div>
+    <div class="mob-block"></div>
+    <div class="mob-block"></div>
+  </div>
+</section>
+
+<!-- Contact form -->
+
+<footer>
+  <div class="container py-4">
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <!-- Логотип -->
+       <div class="logob-container">
+      <div class="mb-3 mb-md-0">
+        <img src="./images/logo-bottom.png" alt="logo zbc footer logo-footer" class="img-fluid" style="width: 6vw;">
+      </div>
+      </div>
+
+      <!-- Меню -->
+      <div class="d-flex flex-wrap justify-content-center" style="position: relative;
+    left: 20%;
+    top: 0.70vh;align-items: center;">
+        <ul class="bottom_ul me-4">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Why us</a></li>
+          <li><a href="#">Portfolio</a></li>
+         <li><a href="#">Contact</a></li>
+
+        </ul>
+             <ul class="bottom_ul me-4">
+          <li><a href="#">Comfort</a></li>
+          <li><a href="#">Comfort+</a></li>
+                    <li><a href="#">Advanced</a></li>
+
+          <li><a href="#">Advanced+</a></li>
+        </ul>
+        <ul class="bottom_ul me-4">
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Cookie policy</a></li>
+           <li><a href="#">GDPR information</a></li>
+
+          <li><a href="#">Legal information</a></li>
+        </ul>
+              <ul class="bottom_ul me-4">
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagramm</a></li>
+           <li><a href="#">Telegramm</a></li>
+
+          <li><a href="#">WhatsApp</a></li>
+        </ul>
+       
+        <!-- <ul class="bottom_ul">
+       <div class="soc-contact" >
+  <ul class="soc-grid">
+    <li class="soc-item"><i class="fa-brands fa-facebook-f"></i></li>
+    <li class="soc-item"><i class="fa-brands fa-instagram"></i></li>
+    <li class="soc-item"><i class="fa-brands fa-whatsapp"></i></li>
+    <li class="soc-item"><i class="fa-brands fa-telegram"></i></li>
+  </ul>
+</div>
+
+        </ul> -->
+      </div>
+    </div>
+
+  </div>
+<!-- <div class="container">
+  <div class="powered py-3">
+    <p>Website developed by <a href="https://makemesites.com" target="_blank">MakeMeSites</a></p>
+  </div>
+</div> -->
+
+  
+</footer>
+
+
+<!-- Footer end -->
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./js/script.js"></script>
+
+
+<!-- slider -->
+ <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  AOS.init();
+</script>
+<script>
+  window.addEventListener('load', function () {
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          centeredSlides: false,
+                    spaceBetween: 200,
+
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        }
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>
+

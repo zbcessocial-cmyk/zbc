@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>ZBC Ventanas</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="./images/favicon/favicon.ico" rel="icon" type="image/x-icon" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Подключаем jQuery -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="./css/es/styles.css" rel="stylesheet" />
+  <link href="./css/es/mobile.css" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    referrerpolicy="no-referrer" rel="stylesheet">
+  <script crossorigin="anonymous"
+    integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+    referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+  <!--fonts-->
+  <link href="https://use.typekit.net/hrq8sta.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- POPINS -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap"
+    rel="stylesheet" />
+  </link>
+  </meta>
+</head>
+
+<body>
+  <!-- Modal -->
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="exampleModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="col-md-12 mt-md-0 d-flex align-items-center" data-aos="fade-left" data-aos-duration="2000">
+        <div class="modal-card-form p-4 shadow w-100"
+          style="height: 512px;width:512px; display: flex; flex-direction: column; justify-content: center;">
+          <div class="formtitle">
+            <h3 class="modal-title text-white">Безкоштовна консультація та розрахунок вартості</h3>
+          </div>
+          <form class="myh-70 d-flex flex-column justify-content-between" action="send.php" method="post">
+            <div class="row mb-3">
+              <div class="col">
+                <input class="form-control form-control-lg" name="name" placeholder="Ім’я" required="" type="text" />
+              </div>
+              <div class="col">
+                <input class="form-control form-control-lg" name="surname" placeholder="Прізвище" required=""
+                  type="text" />
+              </div>
+            </div>
+            <div class="mb-3">
+              <input class="form-control form-control-lg" name="email" placeholder="Електронна пошта" required="" type="email" />
+            </div>
+            <div class="mb-3">
+              <input class="form-control form-control-lg" name="phone" placeholder="Номер телефону" required=""
+                type="tel" />
+            </div>
+            <button class="form_btn btn btn-yellow btn-lg w-100 txt-blue" type="submit">Записатися на зустріч</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <nav class="navbar navbar-expand-lg header">
+    <div class="container">
+      <a class="navbar-brand" href="/#home"><img alt="logo" src="./images/Logo-new.png" /></a>
+      <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+        data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto w-100 d-flex flex-column-reverse align-items-end flex-wrap">
+          <div class="main-nav d-flex nav-width justify-content-end" style="position: relative;top:9px;">
+            <li class="nav-item"><a class="nav-link active" href="#home">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="#why-us">О нас</a></li>
+            <!-- Products Dropdown -->
+            <li class="nav-item dropdown">
+              <a aria-expanded="false" class="nav-link dropdown-toggle" href="#products" id="productsDropdown"
+                role="button">Продукты</a>
+              <ul aria-labelledby="productsDropdown" class="dropdown-menu">
+                <li><a class="dropdown-item" href="./products/ua/comfort.html">Комфорт</a></li>
+                <li><a class="dropdown-item" href="./products/ua/comfort-plus.html">Комфорт+</a></li>
+                <li><a class="dropdown-item" href="./products/ua/advanced.html">Продвинутый</a></li>
+                <li><a class="dropdown-item" href="./products/ua/advanced-plus.html">Продвинутый+</a></li>
+              </ul>
+            </li>
+            <!-- Installation Dropdown -->
+            <li class="nav-item dropdown">
+              <a aria-expanded="false" class="nav-link dropdown-toggle" href="#install" id="installationDropdown"
+                role="button">Монтаж</a>
+              <ul aria-labelledby="installationDropdown" class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Окна</a></li>
+                <li><a class="dropdown-item" href="#">Мебель</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio">Портфолио</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Контакт</a></li>
+            <!-- Language Dropdown -->
+            <li class="nav-item dropdown">
+              <a aria-expanded="false" class="nav-link dropdown-toggle" href="#" id="languageDropdown"
+                role="button">UA</a>
+              <ul aria-labelledby="languageDropdown" class="dropdown-menu lang-menu">
+                <li><a class="dropdown-item" href="/eng.html">ENG</a></li>
+                <li><a class="dropdown-item" href="/cat.html">CAT</a></li>
+                <li><a class="dropdown-item" href="/ru.html">RUS</a></li>
+                <li><a class="dropdown-item" href="/index.html">ESP</a></li>
+
+              </ul>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ <section class="hero position-relative" id="home">
+  <div class="overlay"></div>
+  <!-- Відео на фоні -->
+  <video autoplay="" class="bg-video" loop="" muted="" playsinline="">
+    <source src="./images/footage.mp4" type="video/mp4" />
+    Ваш браузер не підтримує тег video.
+  </video>
+  <!-- Затемнення, якщо потрібно -->
+  <div class="container position-relative">
+    <div class="row align-items-center">
+      <!-- Ліва колонка з текстом -->
+      <div class="col-md-6 text-center text-md-start z-row hero-text-col">
+        <h1 class="display-4 fw-bold hero-title" data-aos="fade-right" data-aos-duration="1500">ZBC – Вікна та двері з ПВХ з профілями Rehau</h1>
+        <p class="lead hero-subtitle" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1500">Ваш дім. Ваш комфорт. Наші вікна.<br />Енергоефективність і сучасний дизайн.<br />Обрані за комфорт.<br>Створені на роки.</p>
+        <a class="btn btn-primary btn-lg mt-3 hero-btn" data-bs-target="#exampleModal" data-bs-toggle="modal" href="#contact">Зв’язатися зі мною</a>
+      </div>
+      <!-- Права колонка з формою -->
+      <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-center " data-aos="fade-left" data-aos-duration="2000">
+        <div class="card-form p-4 shadow w-100"
+          style=" display: flex; flex-direction: column; justify-content: center;">
+          <div class="formtitle">
+            <h3>Безкоштовна консультація та розрахунок вартості</h3>
+          </div>
+          <form class="myh-70 d-flex flex-column justify-content-between" action="send.php" method="post">
+            <div class="row mb-3">
+              <div class="col">
+                <input class="form-control form-control-lg" name="name" placeholder="Ім’я" required="" type="text" />
+              </div>
+              <div class="col">
+                <input class="form-control form-control-lg" name="surname" placeholder="Прізвище" required=""
+                  type="text" />
+              </div>
+            </div>
+            <div class="mb-3">
+              <input class="form-control form-control-lg" name="email" placeholder="Електронна пошта" required="" type="email" />
+            </div>
+            <div class="mb-3">
+              <input class="form-control form-control-lg" name="phone" placeholder="Номер телефону" required=""
+                type="tel" />
+            </div>
+            <button class="form_btn btn btn-yellow btn-lg w-100 txt-blue" type="submit">Записатися на консультацію</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Why Us section -->
+ <section class="whyus-section">
+  <div class="plashka-yellow-proyectos" data-aos="fade-right" data-aos-duration="1000">
+    <h2 class="plashka-yellow-text-proyectos text-blue">Про нас</h2>
+  </div>
+</section>
+<section class="py-5" id="why-us">
+  <div class="container">
+  </div>
+  <div class="container">
+    <div class="row g-4">
+      <!-- Card 1 - Full Service -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="p-4 bg-white h-100">
+          <img alt="Full Service" class="img-fluid mb-3" src="./images/cards/quality.png" />
+          <div class="card-feature card-white">
+            <h5 class="text-primary card-title">Повний сервіс</h5>
+            <p>Від заміру до монтажу: ми беремо все на себе, щоб ви могли насолоджуватися новими вікнами та дверима без турбот.</p>
+            <a class="consult-arrow fw-bold text-primary text-decoration-none" data-bs-target="#exampleModal"
+              data-bs-toggle="modal" href="#">
+              <span>Зв’язатися зі мною</span>
+              <svg class="arrow-svg" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" fill="none" r="11" stroke="#012456" stroke-width="2"></circle>
+                <path d="M10 8l4 4-4 4" fill="none" stroke="#012456" stroke-width="2"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 - Energy Saving -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+        <div class="p-4 text-white h-100">
+          <img alt="Energy Saving" class="img-fluid mb-3" src="./images/cards/energy.png" />
+          <div class="card-feature card-brown card-energy">
+            <div class="energy-overflow"></div>
+            <h5 class="card-title">Енергозбереження</h5>
+            <p>Менше рахунків за електроенергію — більше комфорту. Наші вікна ізолюють ваш дім і знижують споживання енергії.</p>
+            <a class="consult-arrow fw-bold text-white text-decoration-none" data-bs-target="#exampleModal"
+              data-bs-toggle="modal" href="#">
+              <span>Зв’язатися зі мною</span>
+              <svg class="arrow-svg" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" fill="none" r="11" stroke="#fff" stroke-width="2"></circle>
+                <path d="M10 8l4 4-4 4" fill="none" stroke="#fff" stroke-width="2"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 - Price & Quality -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">
+        <div class="p-4 bg-white h-100">
+          <img alt="Price and Quality" class="img-fluid mb-3" src="./images/cards/rehau.png" />
+          <div class="card-feature card-white">
+            <h5 class="text-primary card-title">Ціна та якість</h5>
+            <p>Ми пропонуємо високоякісні вікна та двері з ПВХ за розумною ціною. Розумна інвестиція в комфорт і довговічність!</p>
+            <a class="consult-arrow fw-bold text-primary text-decoration-none" data-bs-target="#exampleModal"
+              data-bs-toggle="modal" href="#">
+              <span>Зв’язатися зі мною</span>
+              <svg class="arrow-svg" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" fill="none" r="11" stroke="#012456" stroke-width="2"></circle>
+                <path d="M10 8l4 4-4 4" fill="none" stroke="#012456" stroke-width="2"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4 - Climate Control -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="1000">
+        <div class="p-4 bg-white h-100">
+          <img alt="Climate Control" class="img-fluid mb-3" src="./images/cards/climate.png" />
+          <div class="card-feature card-blue card-climate">
+            <div class="climate-overflow"></div>
+            <h5 class="card-title">Клімат-контроль</h5>
+            <p>Вікна та двері, що захищають від холоду, спеки та шуму, створюють комфортну та приємну атмосферу в домі протягом усього року.</p>
+            <a class="consult-arrow fw-bold text-white text-decoration-none" data-bs-target="#exampleModal"
+              data-bs-toggle="modal" href="#">
+              <span>Зв’язатися зі мною</span>
+              <svg class="arrow-svg" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" fill="none" r="11" stroke="#fff" stroke-width="2"></circle>
+                <path d="M10 8l4 4-4 4" fill="none" stroke="#fff" stroke-width="2"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 5 - Soundproofing -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="800" data-aos-duration="1000">
+        <div class="p-4 bg-white h-100">
+          <img alt="Soundproofing" class="img-fluid mb-3" src="./images/cards/comfort.png" />
+          <div class="card-feature card-white">
+            <h5 class="text-primary card-title">Шумоізоляція</h5>
+            <p>Насолоджуйтесь тишею та спокоєм. Наші вікна знижують рівень зовнішнього шуму для максимального комфорту в оселі.</p>
+            <a class="consult-arrow fw-bold text-primary text-decoration-none" data-bs-target="#exampleModal"
+              data-bs-toggle="modal" href="#">
+              <span>Зв’язатися зі мною</span>
+              <svg class="arrow-svg" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" fill="none" r="11" stroke="#012456" stroke-width="2"></circle>
+                <path d="M10 8l4 4-4 4" fill="none" stroke="#012456" stroke-width="2"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 6 - Marine Protection -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="1000" data-aos-duration="1000">
+        <div class="p-4 bg-white h-100">
+          <img alt="Marine Protection" class="img-fluid mb-3" src="./images/cards/salt.png" />
+          <div class="card-feature card-blue card-salt">
+            <div class="salt-overflow"></div>
+            <h5 class="card-title">Морський клімат</h5>
+            <p>Наші матеріали стійкі до корозії від морського повітря: ідеально підходять для прибережних зон.</p>
+            <a class="consult-arrow fw-bold text-white text-decoration-none" data-bs-target="#exampleModal"
+              data-bs-toggle="modal" href="#">
+              <span>Зв’язатися зі мною</span>
+              <svg class="arrow-svg" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" fill="none" r="11" stroke="#fff" stroke-width="2"></circle>
+                <path d="M10 8l4 4-4 4" fill="none" stroke="#fff" stroke-width="2"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="products-section">
+  <div class="plashka-blue" data-aos="fade-left" data-aos-duration="1000">
+    <div class="container">
+      <h2 class="plashka-product-text">Наші продукти</h2>
+    </div>
+  </div>
+</section>
+<section class="py-5 position-relative" id="products">
+
+  <div class="container d-flex flex-column gap-4">
+
+    <!-- Card 1 -->
+    <div class="row g-0 bg-light shadow rounded overflow-hidden first-card card-height" data-aos="fade-up"
+      data-aos-duration="1000">
+      <div
+        class="col-md-6 my-bg bg-opacity-75 text-white d-flex flex-column justify-content-between p-4 order-md-1 order-2">
+        <div class="d-flex flex-column justify-content-center h-100 product-fix">
+          <div class="header-card">
+            <h4 class="productcard-title">Комфорт</h4>
+            <p class="mb-1 productcard-subtitle">EURO-DESIGN 70</p>
+          </div>
+          <ul class="list-unstyled">
+            <li><i class="fa-solid fa-check custom-check"></i>Перевірена надійність для стандартного скління</li>
+            <li><i class="fa-solid fa-check custom-check"></i>Оптимальний баланс ціни та якості</li>
+            <li><i class="fa-solid fa-check custom-check"></i>Базова тепло- та шумоізоляція</li>
+          </ul>
+          <a class="btn btn-warning mt-2 px-4 check-btn" href="./products/ua/comfort.html">Дізнатися більше</a>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-2 order-1">
+        <img alt="Comfort" class="img-fluid h-100 w-100 object-fit-cover" src="./images/products/comfort.png" />
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="row g-0 bg-light shadow rounded overflow-hidden second-card card-height" data-aos="fade-up"
+      data-aos-duration="1000">
+      <div class="col-md-6">
+        <img alt="Advanced" class="img-fluid h-100 w-100 object-fit-cover" src="./images/products/comfort.png" />
+      </div>
+      <div class="col-md-6 my-bg bg-opacity-75 text-white d-flex flex-column justify-content-between p-4">
+        <div class="d-flex flex-column justify-content-center h-100 product-fix">
+          <div class="header-card">
+            <h4 class="productcard-title">Комфорт +</h4>
+            <p class="mb-1 productcard-subtitle" style="text-transform:uppercase">Slinova</p>
+          </div>
+          <ul class="list-unstyled">
+            <li><i class="fa-solid fa-check custom-check"></i>Більше комфорту у щоденному житті</li>
+            <li><i class="fa-solid fa-check custom-check"></i>Покращена тепло- та шумоізоляція</li>
+            <li><i class="fa-solid fa-check custom-check"></i>Розроблено для сучасних просторів</li>
+          </ul>
+          <a class="btn btn-warning mt-2 px-4 check-btn" href="./products/ua/comfort-plus.html">Дізнатися більше</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="row g-0 bg-light shadow rounded overflow-hidden third-card card-height" data-aos="fade-up"
+      data-aos-duration="1000">
+      <div
+        class="col-md-6 my-bg bg-opacity-75 text-white d-flex flex-column justify-content-between p-4 order-md-1 order-2">
+        <div class="d-flex flex-column justify-content-center h-100 product-fix">
+          <div class="header-card">
+            <h4 class="productcard-title">Покращений</h4>
+            <p class="mb-1 productcard-subtitle" style="text-transform:uppercase">Synego</p>
+          </div>
+          <ul class="list-unstyled">
+            <li><i class="fa-solid fa-check custom-check"></i>Баланс стилю, ефективності та практичності</li>
+            <li><i class="fa-solid fa-check custom-check"></i>Енергоефективність для житлових приміщень</li>
+            <li><i class="fa-solid fa-check custom-check"></i>Чудовий захист від шуму в міських умовах</li>
+          </ul>
+          <a class="btn btn-warning mt-2 px-4 check-btn" href="./products/ua/advanced.html">Дізнатися більше</a>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-2 order-1">
+        <img alt="Premium" class="img-fluid h-100 w-100 object-fit-cover" src="./images/products/advanced.png" />
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="row g-0 bg-light shadow rounded overflow-hidden fourth-card card-height" data-aos="fade-up"
+      data-aos-duration="1000">
+      <div class="col-md-6">
+        <img alt="Advanced" class="img-fluid h-100 w-100 object-fit-cover" src="./images/products/premium.png" />
+      </div>
+      <div class="col-md-6 my-bg bg-opacity-75 text-white d-flex flex-column justify-content-between p-4">
+        <div class="d-flex flex-column justify-content-center h-100 product-fix">
+          <div class="header-card">
+            <h4 class="productcard-title">Покращений +</h4>
+            <p class="mb-1 productcard-subtitle">GENEO</p>
+          </div>
+          <ul class="list-unstyled">
+            <li><i class="fa-solid fa-check custom-check"></i>Найвищі технології та комфорт</li>
+            <li><i class="fa-solid fa-check custom-check"></i>Виняткова тепло- та шумоізоляція</li>
+            <li><i class="fa-solid fa-check custom-check"></i>Преміальна якість для тих, хто обирає найкраще</li>
+          </ul>
+          <a class="btn btn-warning mt-2 px-4 check-btn" href="./products/ua/advanced-plus.html">Дізнатися більше</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!--Promotion-->
+<section class="promotion-section text-white py-5" id="promotion">
+  <div class="container">
+    <div class="row d-flex align-items-stretch promotion-flex">
+      <!-- Левая колонка с изображением -->
+      <div class="col-md-6 text-center mb-4 mb-md-0" data-aos="fade-right" data-aos-delay="400" data-aos-duration="2000">
+        <!-- <video src="./images/mosquite.webm" autoplay muted loop></video> -->
+        <img alt="" class="free fa-beat" src="./images/free.png" />
+        <img alt="promotion ZBC" class="mosquite-img" src="./images/mosquite-opacity.png" />
+      </div>
+
+      <!-- Правая колонка с текстом -->
+      <div class="col-md-6 d-flex align-items-center mob-fix-prom">
+        <div class="promotion_content p-3 text-start" data-aos="fade-left" data-aos-delay="400" data-aos-duration="2000">
+          <h2 class="fw-bold display-5 section-title promotion_title">Спеціальна пропозиція червня</h2>
+          <p class="fs-5 promotion-sub">Оформіть замовлення цього місяця та отримайте москітну сітку в подарунок!</p>
+          <a class="btn btn-warning fw-bold mt-2 px-4 check-btn big-check hober_btn" href="#">Зв'язатися зі мною</a>
+          <div class="countdown-container mt-4">
+            <h1 style="text-align: left;">До завершення акції залишилося:</h1>
+            <div class="countdown d-flex gap-3">
+              <div class="text-center"><span id="days">0</span><p>днів</p></div>
+              <div class="text-center"><span id="hours">0</span><p>годин</p></div>
+              <div class="mob_mins text-center"><span id="minutes">0</span><p>хвилин</p></div>
+              <div class="mob_seconds text-center"><span id="seconds">0</span><p>секунд</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!--Montage-->
+  <section class="whyus-section">
+  <div class="plashka-yellow-proyectos" data-aos="fade-right" data-aos-duration="1000">
+    <h2 class="plashka-yellow-text-proyectos text-blue">Монтаж</h2>
+  </div>
+</section>
+<section class="py-5" id="install">
+
+  <div class="container">
+
+    <!-- Блок 1 -->
+    <div class="row align-items-start mb-5 mt-5">
+      <div class="col-md-6 text-center text-md-start" data-aos="fade-right" data-aos-duration="2000"
+        style="position: relative;top: 8px;">
+        <img alt="Installation of windows and doors" class="img-fluid img_border"
+          src="./images/montage/montage-w-square.png" style="border-color: #002c60;" />
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0 install_content" data-aos="fade-left" data-aos-duration="2000">
+        <h4 class="fw-bold install_title" style="color: #002c60;">Встановлення<br />вікон і дверей</h4>
+        <p class="install_text">Наші навчені спеціалісти забезпечують точне встановлення ПВХ-вікон і дверей, гарантуючи чудову тепло- та звукоізоляцію, підвищену енергоефективність і довговічність для підвищення комфорту вашого дому.</p>
+        <button class="btn d-inline-flex align-items-center px-4 py-2 install_btn" data-bs-target="#exampleModal"
+          data-bs-toggle="modal">Зв'язатися зі мною</button>
+      </div>
+    </div>
+
+    <!-- Блок 2 -->
+    <div class="row align-items-start pt-5">
+      <div class="col-md-6 order-md-2 text-center text-md-start" data-aos="fade-left" data-aos-delay="400"
+        data-aos-duration="2000" style="position: relative;top: 8px;">
+        <img alt="Furniture installation" class="img-fluid img_border" src="./images/montage/montage-m-square.png"
+          style="border-color: #002c60;" />
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0 order-md-1 install_content" data-aos="fade-right" data-aos-delay="400"
+        data-aos-duration="2000">
+        <h4 class="fw-bold install_title" style="color: #002c60;">Монтаж<br />меблів</h4>
+        <p class="install_text">Наша професійна команда виконує монтаж меблів з точністю, надійністю та ідеальним оздобленням, покращуючи функціональність і зовнішній вигляд вашого дому або офісу.</p>
+        <button class="btn d-inline-flex align-items-center px-4 py-2 install_btn" data-bs-target="#exampleModal"
+          data-bs-toggle="modal">Зв'язатися зі мною</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!--Marquee-->
+ <section class="partners-section">
+  <div class="plashka-blue" data-aos="fade-left" data-aos-duration="1000">
+    <div class="container">
+      <h2 class="plashka-text">Наші партнери</h2>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <div class="container">
+    <h2 class="display-5 section-title p-blue-text" data-aos="fade-right" data-aos-delay="200" data-aos-duration="500"
+      style="padding-top: 6.56vh !important;"></h2>
+  </div>
+  <section id="partners">
+    <div class="marquee">
+      <div class="overflow"></div>
+      <ul class="marquee-content">
+        <!-- Roto -->
+        <li><img alt="Roto" src="./images/partners/roto.png" /></li>
+        <li><img alt="Roto" src="./images/partners/gu.png" /></li>
+        <li><img alt="Roto" src="./images/partners/maco.png" /></li>
+        <li><img alt="Roto" src="./images/partners/wink.png" /></li>
+        <li><img alt="Roto" src="./images/partners/hoppe.png" /></li>
+        <li><img alt="Roto" src="./images/partners/siegenia.png" /></li>
+      </ul>
+    </div>
+  </section>
+  <!-- Swiper slider -->
+<section class="projects-section" id="portfolio">
+  <div class="plashka-yellow-proyectos" data-aos="fade-right" data-aos-duration="1000">
+    <h2 class="plashka-yellow-text-proyectos text-blue">Наші проєкти</h2>
+  </div>
+</section>
+
+
+
+  <section id="swiper-slider-me ">
+
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img alt="" src="./images/portfolio/1.jpg" /></div>
+        <div class="swiper-slide"><img alt="" src="./images/portfolio/2.jpg" /></div>
+        <div class="swiper-slide"><img alt="" src="./images/portfolio/3.jpg" /></div>
+        <div class="swiper-slide"><img alt="" src="./images/portfolio/4.png" /></div>
+        <div class="swiper-slide"><img alt="" src="./images/portfolio/5.jpg" /></div>
+        <div class="swiper-slide"><img alt="" src="./images/portfolio/6.png" /></div>
+        <div class="swiper-slide"><img alt="" src="./images/portfolio/7.png" /></div>
+
+      </div>
+      <!-- Стрелочки навигации -->
+     <!-- Кастомные стрелки -->
+  <div class="custom-swiper-button-prev">
+  </div>
+  <div class="custom-swiper-button-next">
+  </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+ <section id="contact">
+  <div class="container">
+    <h2 class="fw-bold display-5 section-title contact-title">Контакти</h2>
+    <div class="mob-block"></div>
+    <div class="row myrow">
+      <div class="col-md-6 col-12 form_info">
+        <div class="c_container">
+          <div class="c_title"></div>
+          <div class="c_mail">
+            <a class="text-decoration-none" href="mailto:info@income-service.com" target="_blank">
+              <span>
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+              info@zbces.com
+            </a>
+          </div>
+          <div class="c_mail">
+            <a class="text-decoration-none" href="tel:+34624393977" target="_blank">
+              <span>
+                <i class="fa-solid fa-phone"></i>
+              </span>
+              +34 624 293 977
+            </a>
+          </div>
+          <div class="c_mail">
+            <a class="text-decoration-none" href="mailto:info@income-service.com" target="_blank">
+              <span>
+                <i class="fa-solid fa-location-dot"></i>
+              </span>
+              Carrer Saragossa, 1-3, local 33, <br />
+              <span style="margin-left: 24px;">08860, Кастельдефельс, Барселона</span>
+            </a>
+          </div>
+          <div class="social-contact">
+            <ul>
+              <li class="soc-item">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              </li>
+              <li class="soc-item">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </li>
+              <li class="soc-item">
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+              </li>
+              <li class="soc-item">
+                <a href="#"><i class="fa-brands fa-telegram"></i></a>
+              </li>
+              <li class="soc-item">
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-12 form_inputs">
+        <div class="card-form card-form_contact p-4 shadow w-100"
+          style="height: 55vh; display: flex; flex-direction: column; justify-content: center;">
+          <div class="overlay-contact"></div>
+          <div class="formtitle">
+            <h3 class="text-white">Безкоштовна консультація та розрахунок вартості</h3>
+          </div>
+          <form class="myh-70 d-flex flex-column justify-content-between" action="send.php" method="post">
+            <div class="row mb-3">
+              <div class="col">
+                <input class="form-control form-control-lg" name="name" placeholder="Ім'я" required="" type="text" />
+              </div>
+              <div class="col">
+                <input class="form-control form-control-lg" name="surname" placeholder="Прізвище" required=""
+                  type="text" />
+              </div>
+            </div>
+            <div class="mb-3">
+              <input class="form-control form-control-lg" name="email" placeholder="Email" required="" type="email" />
+            </div>
+            <div class="mb-3">
+              <input class="form-control form-control-lg" name="phone" placeholder="Номер телефону" required=""
+                type="tel" />
+            </div>
+            <button class="form_btn btn btn-yellow btn-lg w-100 txt-blue" type="submit">Записатися на прийом</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="mob-block"></div>
+    <div class="mob-block"></div>
+  </div>
+</section>
+
+
+
+
+  <!-- Contact form -->
+<footer style="min-height: 200px; display: flex; align-items: center;">
+  <div class="container w-100">
+    <div class="row w-100 align-items-center justify-content-center">
+      <!-- Логотип -->
+      <div class="col-12 col-md-2 text-center text-md-start">
+        <img alt="logo zbc footer logo-footer" class="img-fluid" src="./images/logo-bottom.png" style="width: 6vw;" />
+      </div>
+
+      <!-- Меню -->
+      <div class="col-12 col-md-10">
+        <div class="row">
+          <div class="col-6 col-lg-3">
+            <ul class="bottom_ul list-unstyled m-0">
+              <li><a href="#">Головна</a></li>
+              <li><a href="#">Чому ми</a></li>
+              <li><a href="#">Портфоліо</a></li>
+              <li><a href="#">Контакти</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-3">
+            <ul class="bottom_ul list-unstyled m-0">
+              <li><a href="#">Комфорт</a></li>
+              <li><a href="#">Комфорт+</a></li>
+              <li><a href="#">Покращений</a></li>
+              <li><a href="#">Покращений+</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-3">
+            <ul class="bottom_ul list-unstyled m-0">
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Telegram</a></li>
+              <li><a href="#">WhatsApp</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-3">
+            <ul class="bottom_ul list-unstyled m-0">
+              <li><a href="#">Політика конфіденційності</a></li>
+              <li><a href="#">Політика використання cookie</a></li>
+              <li><a href="#">Інформація щодо GDPR</a></li>
+              <li><a href="#">Юридичне повідомлення</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+  <!-- Footer end -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/script.js"></script>
+  <!-- slider -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script>
+    window.addEventListener('load', function () {
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+           nextEl: ".custom-swiper-button-next",
+  prevEl: ".custom-swiper-button-prev",
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            centeredSlides: false,
+            spaceBetween: 200,
+
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          }
+        }
+      });
+    });
+  </script>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const plashka = document.querySelector('.plashka-blue');
+    const title = document.querySelector('.section-title');
+    console.log('testworkkkk')
+    if (plashka && title) {
+      const plashkaRect = plashka.getBoundingClientRect();
+      const titleRect = title.getBoundingClientRect();
+
+      // Центр plashka относительно экрана
+      const plashkaCenter = plashkaRect.left + plashkaRect.width / 2;
+
+      // Ширина заголовка
+      const titleWidth = titleRect.width;
+
+      // Смещение заголовка влево, чтобы центр совпал
+      const newLeft = plashkaCenter - titleWidth / 2;
+
+      // Позиционируем заголовок
+      title.style.position = 'absolute';
+      title.style.left = `${newLeft}px`;
+    }
+  });
+</script>
+
+</body>
+
+</html>

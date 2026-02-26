@@ -12,7 +12,7 @@ $(window).on('load', function() {
     // Задержка 1 секунда перед добавлением класса, чтобы видео стало видимым
     setTimeout(function() {
       $('#hero-video').addClass('video-visible'); // Делаем видео видимым
-      $('#hero-video')[0].play(); // Запускаем видео
+      if ($('#hero-video')[0]) $('#hero-video')[0].play(); // Запускаем видео
     }, 1000); // 1 секунда задержки
   });
 
@@ -350,7 +350,10 @@ COLOR_BTNS.forEach(btn => {
   });
 });
 
-document.getElementById('toggleShutters').addEventListener('click', toggleShutters);
+const toggleShuttersBtn = document.getElementById('toggleShutters');
+if (toggleShuttersBtn) {
+  toggleShuttersBtn.addEventListener('click', toggleShutters);
+}
 
 
 

@@ -11,12 +11,21 @@ $mail = new PHPMailer(true);
 try {
     // SMTP config
     $mail->isSMTP();
+    $mail->SMTPDebug  = 2; // Подробный лог — убрать после отладки
+    $mail->Debugoutput = 'html';
     $mail->Host       = 'smtp.hostinger.com'; // Hostinger SMTP server
     $mail->SMTPAuth   = true;
     $mail->Username   = 'info@zbcventanas.com'; // Your Hostinger email
-    $mail->Password   = '!S53em4e12345'; // Email password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
-    $mail->Port       = 587;
+    $mail->Password   = 'DGSsdbsdbfhn4&'; // Email password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port       = 465;
+    $mail->SMTPOptions = [
+        'ssl' => [
+            'verify_peer'       => false,
+            'verify_peer_name'  => false,
+            'allow_self_signed' => true,
+        ],
+    ];
 
     // Sender and receiver
     $mail->setFrom('info@zbcventanas.com', 'Hostinger Test');
